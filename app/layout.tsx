@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={pixeled.className}>{children}</body>
+      <body className={`${pixeled.className} bg-black text-white`}>{children}</body>
     </html>
   );
 }
