@@ -13,23 +13,23 @@ type LinkType = {
 const menuLinks: LinkType[] = [
   {
     name: 'Home',
-    href: '/',
+    href: '#home',
   },
   {
     name: 'About Me',
-    href: '/about',
+    href: '#about',
   },
   {
     name: 'Projects',
-    href: '/projects',
+    href: '#projects',
   },
   {
     name: 'Skills',
-    href: '/skills',
+    href: '#skills',
   },
   {
     name: 'Contact',
-    href: '/contact',
+    href: '#contact',
   },
 ];
 
@@ -57,12 +57,12 @@ const Header: FC = () => {
         <GlitchText text={'Hello'} />
       </div>
 
-      <div className='m-2 flex flex-col'>
+      <div className='m-2 flex flex-col text-sm'>
         {menuLinks.map((link: LinkType, index) => {
           if (index <= activeIndex) {
             return (
               <Link key={link.name} href={link.href}>
-                <TypingText text={link.name} />
+                <TypingText text={link.name} className='uppercase' />
               </Link>
             );
           }

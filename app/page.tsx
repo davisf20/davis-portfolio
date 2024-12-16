@@ -1,9 +1,12 @@
 import Header from '@/app/pageSections/Header';
+import { TypingProvider } from './context/typing/TypingProvider';
 
 export default function Home() {
   return (
     <main>
-      <Header />
+      <TypingProvider>
+        <Header />
+      </TypingProvider>
     </main>
   );
 }
