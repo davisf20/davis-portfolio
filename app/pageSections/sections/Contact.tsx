@@ -1,6 +1,8 @@
 import TypingText from "../../components/TypingText/TypingText";
+import { SectionProps } from "@/app/pageSections/Section";
+import { FC } from "react";
 
-const Contact = () => {
+const Contact: FC<SectionProps> = ({}) => {
   return <TypingText text='Contact' />;
 };
 

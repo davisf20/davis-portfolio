@@ -1,14 +1,10 @@
-import BackButton from "@/app/components/BackButton/BackButton";
 import TypingText from "../../components/TypingText/TypingText";
-import { Section } from "@/app/pageSections/Section";
+import { SectionProps } from "@/app/pageSections/Section";
 import SequentialTyping from "@/app/components/TypingText/SequentialTyping";
+import { FC } from "react";
 
-const About = ({ onSectionChange }: { onSectionChange: (section: Section) => void }) => {
+const About: FC<SectionProps> = ({}) => {
   const elements = [
-    {
-      id: 'back',
-      element: <BackButton onSectionChange={onSectionChange} />
-    },
     {
       id: 'title',
       element: (

@@ -27,7 +27,7 @@ const TypingText: FC<TypingTextProps> = ({ text, speed = 100, className }) => {
   }, [index, text, speed, setActiveText]);
 
   return (
-    <span className={className}>
+    <span className={`uppercase ${className}`}>
       {text.substring(0, index)}
       {activeText === text && <span className={styles.cursor} />}
     </span>
