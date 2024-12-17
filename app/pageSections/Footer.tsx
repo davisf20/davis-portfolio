@@ -16,8 +16,8 @@ const Footer = ({
   onNavigate,
 }: FooterProps) => {
   return (
-    <footer className='mt-auto flex flex-col items-center justify-center gap-y-5 p-5'>
-      <hr className='w-full' />
+    <footer className='flex flex-col items-center justify-center gap-y-5 p-5'>
+      <hr className='w-full border-2' />
       <div className='flex flex-row items-center justify-center gap-x-5'>
         {currentSection !== 'menu' && (
           <BackButton onSectionChange={onSectionChange} />
@@ -33,7 +33,7 @@ const Footer = ({
             <ArrowButton direction='right' onClick={() => onSectionChange(Section.RIGHT)} /> */}
       </div>
       <div className='flex flex-row items-center justify-center'>
-        <TypingText text='Made by Davis Fusco' className='text-2xs' />
+        <TypingText text='Developed by Me' className='text-2xs' />
       </div>
     </footer>
   );

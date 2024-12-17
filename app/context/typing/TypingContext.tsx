@@ -5,4 +5,6 @@ type TypingContextType = {
   setActiveText: (text: string | null) => void;
 };
 
-export const TypingContext = createContext<TypingContextType | undefined>(undefined);
+export const TypingContext = createContext<TypingContextType | undefined>(
+  undefined
+);

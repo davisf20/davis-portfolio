@@ -1,8 +1,8 @@
-import GlitchText from "../components/GlitchText/GlitchText";
+import GlitchText from '../components/GlitchText/GlitchText';
 
 const Header = () => {
   return (
-    <header className='flex flex-col items-center'>
+    <header className='mt-20 flex flex-col items-center'>
       <GlitchText text={'Hello'} />
     </header>
   );
