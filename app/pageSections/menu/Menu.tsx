@@ -1,19 +1,36 @@
 'use client';
 
 import TypingText from '@/app/components/TypingText/TypingText';
-import { FC } from 'react';
-import { Section } from '../Section';
+import { FC, useEffect, useMemo, useState } from 'react';
+import { MenuProps } from '../Section';
 import SequentialTyping, {
   TypingElement,
 } from '../../components/TypingText/SequentialTyping';
 import { menuLinks } from './menuConfig';
+import { useKeyboardNavigation } from '@/app/components/KeyboardNavigation/useKeyboardNavigation';
 
-type MenuProps = {
-  onSectionChange: (section: Section) => void;
-  selectedIndex: number;
-};
+const Menu: FC<MenuProps> = ({ onSectionChange, onNavigationChange }) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-const Menu: FC<MenuProps> = ({ onSectionChange, selectedIndex }) => {
+  const handlers = useMemo(
+    () => ({
+      onUp: () => setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev)),
+      onDown: () =>
+        setSelectedIndex((prev) =>
+          prev < menuLinks.length - 1 ? prev + 1 : prev
+        ),
+      onEnter: () => onSectionChange(menuLinks[selectedIndex].section),
+    }),
+    [selectedIndex, onSectionChange]
+  );
+
+  useEffect(() => {
+    onNavigationChange?.(handlers);
+    return () => onNavigationChange?.(undefined);
+  }, [handlers, onNavigationChange]);
+
+  useKeyboardNavigation(handlers);
+
   const elements: TypingElement[] = [
     {
       id: 'subtitle',

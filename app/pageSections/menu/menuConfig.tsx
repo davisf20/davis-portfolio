@@ -19,7 +19,7 @@ export const menuLinks: LinkType[] = [
     section: 'skills',
   },
   {
-    name: 'Contact',
-    section: 'contact',
+    name: 'Contacts',
+    section: 'contacts',
   },
 ];

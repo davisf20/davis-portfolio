@@ -7,7 +7,11 @@ import { Section, Direction } from './Section';
 type FooterProps = {
   currentSection: Section;
   onSectionChange: (section: Section) => void;
-  onNavigate: (direction: Direction) => void;
+  onNavigate?: {
+    onUp: () => void;
+    onDown: () => void;
+    onEnter: () => void;
+  };
 };
 
 const Footer = ({
@@ -22,15 +26,13 @@ const Footer = ({
         {currentSection !== 'menu' && (
           <BackButton onSectionChange={onSectionChange} />
         )}
-        {currentSection === 'menu' && (
+        {onNavigate && (
           <>
-            <ArrowButton direction='up' onClick={() => onNavigate('UP')} />
-            <ArrowButton direction='down' onClick={() => onNavigate('DOWN')} />
-            <EnterButton onClick={() => onNavigate('ENTER')} />
+            <ArrowButton direction='up' onClick={onNavigate.onUp} />
+            <ArrowButton direction='down' onClick={onNavigate.onDown} />
+            <EnterButton onClick={onNavigate.onEnter} />
           </>
         )}
-        {/* <ArrowButton direction='left' onClick={() => onSectionChange(Section.LEFT)} />
-            <ArrowButton direction='right' onClick={() => onSectionChange(Section.RIGHT)} /> */}
       </div>
       <div className='flex flex-row items-center justify-center'>
         <TypingText text='Developed by Me' className='text-2xs' />

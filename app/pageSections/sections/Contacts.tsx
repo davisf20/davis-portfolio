@@ -3,8 +3,9 @@ import SequentialTyping, {
 } from '@/app/components/TypingText/SequentialTyping';
 import TypingText from '../../components/TypingText/TypingText';
 import { SectionProps } from '@/app/pageSections/Section';
-import { FC } from 'react';
+import { FC, useEffect, useMemo, useState } from 'react';
 import { CiLinkedin } from 'react-icons/ci';
+import { useKeyboardNavigation } from '@/app/components/KeyboardNavigation/useKeyboardNavigation';
 
 const EmailIcon = () => (
   <svg
@@ -34,7 +35,39 @@ const GithubIcon = () => (
   </svg>
 );
 
-const Contact: FC<SectionProps> = ({}) => {
+const Contacts: FC<SectionProps> = ({ onNavigationChange }) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const links = useMemo(
+    () => [
+      { id: 'email', href: 'mailto:davis.fusco.20@gmail.com' },
+      { id: 'linkedin', href: 'https://www.linkedin.com/in/davis-fusco' },
+      { id: 'github', href: 'https://github.com/davisf20' },
+    ],
+    []
+  );
+
+  const handlers = useMemo(
+    () => ({
+      onUp: () => setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev)),
+      onDown: () =>
+        setSelectedIndex((prev) => (prev < links.length - 1 ? prev + 1 : prev)),
+      onEnter: () => {
+        const link = links[selectedIndex];
+        if (link) {
+          window.open(link.href, '_blank');
+        }
+      },
+    }),
+    [selectedIndex, links]
+  );
+
+  useEffect(() => {
+    onNavigationChange?.(handlers);
+    return () => onNavigationChange?.(undefined);
+  }, [handlers, onNavigationChange]);
+
+  useKeyboardNavigation(handlers);
+
   const elements: TypingElement[] = [
     {
       id: 'title',
@@ -45,7 +78,7 @@ const Contact: FC<SectionProps> = ({}) => {
       ),
     },
     {
-      id: 'content',
+      id: 'subtitle',
       element: (
         <div className='mb-10 text-2xs underline'>
           <TypingText text='Here is how you can reach me:' />
@@ -56,6 +89,18 @@ const Contact: FC<SectionProps> = ({}) => {
       id: 'email',
       element: (
         <div className='flex items-center gap-x-2 text-2xs'>
+          {selectedIndex === 0 ? (
+            <div className='h-6 w-6'>
+              <svg viewBox='0 0 24 24'>
+                <path
+                  d='M8 5v2h2V5H8zm4 4V7h-2v2h2zm2 2V9h-2v2h2zm0 2h2v-2h-2v2zm-2 2v-2h2v2h-2zm0 0h-2v2h2v-2zm-4 4v-2h2v2H8z'
+                  fill='currentColor'
+                />
+              </svg>
+            </div>
+          ) : (
+            <div className='h-6 w-6' />
+          )}
           <EmailIcon />
           <a href='mailto:davis.fusco.20@gmail.com' className='hover:underline'>
             <TypingText text='davis.fusco.20@gmail.com' />
@@ -67,6 +112,18 @@ const Contact: FC<SectionProps> = ({}) => {
       id: 'linkedin',
       element: (
         <div className='flex items-center gap-x-2 text-2xs'>
+          {selectedIndex === 1 ? (
+            <div className='h-6 w-6'>
+              <svg viewBox='0 0 24 24'>
+                <path
+                  d='M8 5v2h2V5H8zm4 4V7h-2v2h2zm2 2V9h-2v2h2zm0 2h2v-2h-2v2zm-2 2v-2h2v2h-2zm0 0h-2v2h2v-2zm-4 4v-2h2v2H8z'
+                  fill='currentColor'
+                />
+              </svg>
+            </div>
+          ) : (
+            <div className='h-6 w-6' />
+          )}
           <CiLinkedin className='h-6 w-6' />
           <a
             href='https://www.linkedin.com/in/davis-fusco'
@@ -83,6 +140,18 @@ const Contact: FC<SectionProps> = ({}) => {
       id: 'github',
       element: (
         <div className='flex items-center gap-x-2 text-2xs'>
+          {selectedIndex === 2 ? (
+            <div className='h-6 w-6'>
+              <svg viewBox='0 0 24 24'>
+                <path
+                  d='M8 5v2h2V5H8zm4 4V7h-2v2h2zm2 2V9h-2v2h2zm0 2h2v-2h-2v2zm-2 2v-2h2v2h-2zm0 0h-2v2h2v-2zm-4 4v-2h2v2H8z'
+                  fill='currentColor'
+                />
+              </svg>
+            </div>
+          ) : (
+            <div className='h-6 w-6' />
+          )}
           <GithubIcon />
           <a
             href='https://github.com/davisf20'
@@ -104,4 +173,4 @@ const Contact: FC<SectionProps> = ({}) => {
   );
 };
 
-export default Contact;
+export default Contacts;

@@ -1,11 +1,19 @@
-export type Section = 'menu' | 'about' | 'projects' | 'skills' | 'contact';
+export type Section = 'menu' | 'about' | 'projects' | 'skills' | 'contacts';
 export type Direction = 'UP' | 'DOWN' | 'ENTER';
 
-export type SectionProps = {};
+export type NavigationHandlers = {
+  onUp: () => void;
+  onDown: () => void;
+  onEnter: () => void;
+};
 
 export type MenuProps = {
   onSectionChange: (section: Section) => void;
-  selectedIndex: number;
+  onNavigationChange?: (handlers: NavigationHandlers | undefined) => void;
+};
+
+export type SectionProps = {
+  onNavigationChange?: (handlers: NavigationHandlers | undefined) => void;
 };
 
 export type SectionComponent = {
@@ -13,5 +21,5 @@ export type SectionComponent = {
   about: React.FC<SectionProps>;
   projects: React.FC<SectionProps>;
   skills: React.FC<SectionProps>;
-  contact: React.FC<SectionProps>;
+  contacts: React.FC<SectionProps>;
 };
