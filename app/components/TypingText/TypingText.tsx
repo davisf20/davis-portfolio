@@ -8,9 +8,15 @@ type TypingTextProps = {
   text: string;
   speed?: number;
   className?: string;
+  onComplete?: () => void;
 };
 
-const TypingText: FC<TypingTextProps> = ({ text, speed = 100, className }) => {
+const TypingText: FC<TypingTextProps> = ({
+  text,
+  speed = 100,
+  className,
+  onComplete,
+}) => {
   const [index, setIndex] = useState(0);
   const { activeText, setActiveText } = useTyping();
 
@@ -23,8 +29,10 @@ const TypingText: FC<TypingTextProps> = ({ text, speed = 100, className }) => {
       setActiveText(text);
       const timer = setTimeout(() => setIndex(index + 1), speed);
       return () => clearTimeout(timer);
+    } else if (onComplete) {
+      onComplete();
     }
-  }, [index, text, speed, setActiveText]);
+  }, [index, text, speed, setActiveText, onComplete]);
 
   return (
     <span className={`uppercase ${className}`}>

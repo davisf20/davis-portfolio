@@ -38,7 +38,7 @@ const Menu: FC<MenuProps> = ({ onSectionChange, selectedIndex }) => {
 
   return (
     <section className='m-2 flex flex-col gap-y-2 text-sm'>
-      <SequentialTyping elements={elements} delay={1000} />
+      <SequentialTyping elements={elements} delay={500} />
     </section>
   );
 };
