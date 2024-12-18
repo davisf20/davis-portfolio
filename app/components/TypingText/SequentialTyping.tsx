@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, useEffect, useState } from 'react';
 import TypingText from './TypingText';
 
-type TypingElement = {
+export type TypingElement = {
   id: string;
   element: ReactNode;
 };

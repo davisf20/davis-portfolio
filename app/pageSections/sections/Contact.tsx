@@ -1,4 +1,6 @@
-import SequentialTyping from '@/app/components/TypingText/SequentialTyping';
+import SequentialTyping, {
+  TypingElement,
+} from '@/app/components/TypingText/SequentialTyping';
 import TypingText from '../../components/TypingText/TypingText';
 import { SectionProps } from '@/app/pageSections/Section';
 import { FC } from 'react';
@@ -33,19 +35,19 @@ const GithubIcon = () => (
 );
 
 const Contact: FC<SectionProps> = ({}) => {
-  const elements = [
+  const elements: TypingElement[] = [
     {
       id: 'title',
       element: (
-        <div className='mb-10 flex justify-center'>
-          <TypingText text='Contact' />
+        <div className='mb-20 flex justify-center'>
+          <TypingText text='Contacts' />
         </div>
       ),
     },
     {
       id: 'content',
       element: (
-        <div className='mb-5 text-2xs underline'>
+        <div className='mb-10 text-2xs underline'>
           <TypingText text='Here is how you can reach me:' />
         </div>
       ),
@@ -96,7 +98,7 @@ const Contact: FC<SectionProps> = ({}) => {
   ];
 
   return (
-    <section className='relative flex flex-col gap-y-2'>
+    <section className='flex flex-col gap-y-2'>
       <SequentialTyping elements={elements} delay={500} />
     </section>
   );

@@ -11,6 +11,7 @@ import Skills from './sections/Skills';
 import { menuLinks } from './menu/menuConfig';
 import Footer from './Footer';
 import Header from './Header';
+import TypingText from '../components/TypingText/TypingText';
 
 const SectionComponents: SectionComponent = {
   menu: Menu,
@@ -77,7 +78,7 @@ const Home = () => {
   };
 
   return (
-    <section className='flex h-full flex-col gap-y-20 border-4'>
+    <section className='flex h-full flex-col items-center justify-center gap-y-20 border-4'>
       <Header />
       <div className='flex flex-1 items-center justify-center'>
         <div className='h-full w-full max-w-2xl p-5'>

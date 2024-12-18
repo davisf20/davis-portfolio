@@ -13,7 +13,7 @@ type TypingTextProps = {
 
 const TypingText: FC<TypingTextProps> = ({
   text,
-  speed = 100,
+  speed = 50,
   className,
   onComplete,
 }) => {

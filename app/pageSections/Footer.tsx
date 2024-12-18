@@ -16,7 +16,7 @@ const Footer = ({
   onNavigate,
 }: FooterProps) => {
   return (
-    <footer className='flex flex-col items-center justify-center gap-y-5 p-5'>
+    <footer className='flex w-full flex-col items-center justify-center gap-y-5 p-5'>
       <hr className='w-full border-2' />
       <div className='flex flex-row items-center justify-center gap-x-5'>
         {currentSection !== 'menu' && (
