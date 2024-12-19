@@ -1,8 +1,15 @@
 .glitch {
     color: #eee;
     position: relative;
-    font-size: 36pt;
+    font-size: 24pt;
     background: black;
+}
+
+/* Media query per schermi medi e grandi */
+@media (min-width: 768px) {
+    .glitch {
+        font-size: 36pt;
+    }
 }
 
 .glitch::before,
@@ -18,7 +25,7 @@
 
 .glitch::before {
     /* variation */
-    left: 6px;
+    left: 4px;
     text-shadow: -1px 0 red;
 
     /* important: opaque background masks the original */
@@ -32,12 +39,22 @@
 }
 .glitch::after {
     /* variation */
-    left: -6px;
+    left: -4px;
     text-shadow: -1px 0 blue;
 
     /* important: opaque background masks the original */
     background: black;
     animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@media (min-width: 768px) {
+    .glitch::before {
+        left: 6px;
+    }
+    
+    .glitch::after {
+        left: -6px;
+    }
 }
 
 @keyframes glitch-anim {

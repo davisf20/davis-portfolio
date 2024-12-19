@@ -35,8 +35,8 @@ const Menu: FC<MenuProps> = ({ onSectionChange, onNavigationChange }) => {
     {
       id: 'subtitle',
       element: (
-        <div className='mb-20'>
-          <TypingText text='Hi, I am Davis, wellcome to my portfolio :)' />
+        <div className='mb-20 leading-relaxed'>
+          <TypingText text='Hi, I am Davis, welcome to my portfolio :)' />
         </div>
       ),
     },

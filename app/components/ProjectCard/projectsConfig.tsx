@@ -24,9 +24,10 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
   },
   {
-    link: 'https://www.google.com',
+    link: 'https://court-x.com',
     title: 'Marketplace',
-    description: 'Marketplace is a platform for buying and selling products.',
+    description:
+      'A marketplace where users can buy and sell their items, specialized in sports.',
     icon: (
       <svg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
         <path
