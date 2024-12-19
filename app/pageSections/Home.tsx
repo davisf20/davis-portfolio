@@ -45,10 +45,10 @@ const Home = () => {
   };
 
   return (
-    <section className='flex h-full flex-col items-center justify-center gap-y-20 border-4'>
-      <Header />
+    <section className='flex h-full flex-col items-center justify-center border-4 md:gap-y-20'>
+      <Header title={currentSection} />
       <div className='flex flex-1 items-center justify-center'>
-        <div className='h-full w-full max-w-2xl p-5'>
+        <div className='h-full w-full max-w-4xl p-5'>
           {renderCurrentSection()}
         </div>
       </div>

@@ -2,9 +2,11 @@ export type Section = 'menu' | 'about' | 'projects' | 'skills' | 'contacts';
 export type Direction = 'UP' | 'DOWN' | 'ENTER';
 
 export type NavigationHandlers = {
-  onUp: () => void;
-  onDown: () => void;
-  onEnter: () => void;
+  onUp?: () => void;
+  onDown?: () => void;
+  onLeft?: () => void;
+  onRight?: () => void;
+  onEnter?: () => void;
 };
 
 export type MenuProps = {

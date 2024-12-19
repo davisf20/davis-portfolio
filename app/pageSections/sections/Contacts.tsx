@@ -70,14 +70,6 @@ const Contacts: FC<SectionProps> = ({ onNavigationChange }) => {
 
   const elements: TypingElement[] = [
     {
-      id: 'title',
-      element: (
-        <div className='mb-20 flex justify-center'>
-          <TypingText text='Contacts' />
-        </div>
-      ),
-    },
-    {
       id: 'subtitle',
       element: (
         <div className='mb-10 text-2xs underline'>

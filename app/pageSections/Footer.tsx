@@ -8,9 +8,11 @@ type FooterProps = {
   currentSection: Section;
   onSectionChange: (section: Section) => void;
   onNavigate?: {
-    onUp: () => void;
-    onDown: () => void;
-    onEnter: () => void;
+    onUp?: () => void;
+    onDown?: () => void;
+    onLeft?: () => void;
+    onRight?: () => void;
+    onEnter?: () => void;
   };
 };
 
@@ -28,9 +30,19 @@ const Footer = ({
         )}
         {onNavigate && (
           <>
-            <ArrowButton direction='up' onClick={onNavigate.onUp} />
-            <ArrowButton direction='down' onClick={onNavigate.onDown} />
-            <EnterButton onClick={onNavigate.onEnter} />
+            {onNavigate.onUp && (
+              <ArrowButton direction='up' onClick={onNavigate.onUp} />
+            )}
+            {onNavigate.onDown && (
+              <ArrowButton direction='down' onClick={onNavigate.onDown} />
+            )}
+            {onNavigate.onLeft && (
+              <ArrowButton direction='left' onClick={onNavigate.onLeft} />
+            )}
+            {onNavigate.onRight && (
+              <ArrowButton direction='right' onClick={onNavigate.onRight} />
+            )}
+            {onNavigate.onEnter && <EnterButton onClick={onNavigate.onEnter} />}
           </>
         )}
       </div>

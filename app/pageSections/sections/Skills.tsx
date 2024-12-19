@@ -21,14 +21,6 @@ const softSkills = [
 const Skills: FC<SectionProps> = ({}) => {
   const elements = [
     {
-      id: 'title',
-      element: (
-        <div className='mb-5'>
-          <TypingText text='Skills' speed={100} />
-        </div>
-      ),
-    },
-    {
       id: 'hardSkills',
       element: <SkillsList title='HARD SKILLS' skills={hardSkills} />,
     },

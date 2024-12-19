@@ -6,14 +6,6 @@ import { FC } from 'react';
 const About: FC<SectionProps> = ({}) => {
   const elements = [
     {
-      id: 'title',
-      element: (
-        <div className='mb-10 flex justify-center'>
-          <TypingText text='About Me' />
-        </div>
-      ),
-    },
-    {
       id: 'content',
       element: (
         <div className='text-2xs'>

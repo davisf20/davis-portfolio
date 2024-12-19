@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 type NavigationConfig = {
   onUp?: () => void;
   onDown?: () => void;
+  onLeft?: () => void;
+  onRight?: () => void;
   onEnter?: () => void;
   onEscape?: () => void;
   isEnabled?: boolean;
@@ -11,6 +13,8 @@ type NavigationConfig = {
 export const useKeyboardNavigation = ({
   onUp,
   onDown,
+  onLeft,
+  onRight,
   onEnter,
   onEscape,
   isEnabled = true,
@@ -26,6 +30,12 @@ export const useKeyboardNavigation = ({
         case 'ArrowDown':
           onDown?.();
           break;
+        case 'ArrowLeft':
+          onLeft?.();
+          break;
+        case 'ArrowRight':
+          onRight?.();
+          break;
         case 'Enter':
           onEnter?.();
           break;
@@ -37,5 +47,5 @@ export const useKeyboardNavigation = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isEnabled, onUp, onDown, onEnter, onEscape]);
+  }, [isEnabled, onUp, onDown, onLeft, onRight, onEnter, onEscape]);
 };

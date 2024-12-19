@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontSize: {
         '2xs': '10px',
+        '3xs': '8px',
       },
       fontFamily: {
         pixeled: ['var(--font-pixeled)'],
