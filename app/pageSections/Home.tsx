@@ -1,13 +1,11 @@
 'use client';
 
 import Menu from '@/app/pageSections/menu/Menu';
-import { useEffect, useState } from 'react';
-import { Direction, NavigationHandlers, Section } from './Section';
+import { useState } from 'react';
+import { NavigationHandlers, Section, SectionComponent } from './Section';
 import About from './sections/About';
-import { SectionComponent } from './Section';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
-import { menuLinks } from './menu/menuConfig';
 import Footer from './Footer';
 import Header from './Header';
 import Contacts from './sections/Contacts';
