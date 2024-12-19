@@ -37,6 +37,8 @@ const GithubIcon = () => (
 
 const Contacts: FC<SectionProps> = ({ onNavigationChange }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isSubtitleComplete, setIsSubtitleComplete] = useState(false);
+
   const links = useMemo(
     () => [
       { id: 'email', href: 'mailto:davis.fusco.20@gmail.com' },
@@ -68,15 +70,7 @@ const Contacts: FC<SectionProps> = ({ onNavigationChange }) => {
 
   useKeyboardNavigation(handlers);
 
-  const elements: TypingElement[] = [
-    {
-      id: 'subtitle',
-      element: (
-        <div className='mb-10 text-2xs underline'>
-          <TypingText text='Here is how you can reach me:' />
-        </div>
-      ),
-    },
+  const linkElements: TypingElement[] = [
     {
       id: 'email',
       element: (
@@ -159,8 +153,18 @@ const Contacts: FC<SectionProps> = ({ onNavigationChange }) => {
   ];
 
   return (
-    <section className='flex flex-col gap-y-2'>
-      <SequentialTyping elements={elements} delay={500} />
+    <section className='flex flex-col items-center gap-y-10'>
+      <div className='text-center text-2xs underline'>
+        <TypingText
+          text='Here is how you can reach me:'
+          onComplete={() => setIsSubtitleComplete(true)}
+        />
+      </div>
+      <div className='w-full'>
+        {isSubtitleComplete && (
+          <SequentialTyping elements={linkElements} delay={500} />
+        )}
+      </div>
     </section>
   );
 };

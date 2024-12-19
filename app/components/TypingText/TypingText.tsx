@@ -35,7 +35,7 @@ const TypingText: FC<TypingTextProps> = ({
   }, [index, text, speed, setActiveText, onComplete]);
 
   return (
-    <span className={`uppercase ${className}`}>
+    <span className={`whitespace-pre-line uppercase ${className}`}>
       {text.substring(0, index)}
       {activeText === text && <span className={styles.cursor} />}
     </span>

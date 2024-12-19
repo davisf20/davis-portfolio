@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <section className='flex min-h-[calc(100vh-2.5rem)] flex-col items-center justify-center gap-y-10 border-4 sm:gap-y-10 md:gap-y-20'>
       <Header title={currentSection} />
-      <div className='flex flex-1 items-center justify-center'>
+      <div className='flex flex-1 items-start justify-center'>
         <div className='h-full w-full max-w-4xl p-5'>
           {renderCurrentSection()}
         </div>
