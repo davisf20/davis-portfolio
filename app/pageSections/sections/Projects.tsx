@@ -36,9 +36,10 @@ const projects = [
   },
   {
     title: (
-      <div className='flex items-start gap-x-2'>
-        <FaUsers /> Characterization of user misbehavior in online social media
-      </div>
+      <span>
+        <FaUsers className='mr-2 inline-flex' />
+        Characterization of user misbehavior in online social media
+      </span>
     ),
     description:
       'A study of Twitter misbehavior in discussions about the Covid-19 vaccine in Italy, focusing on misinformation and hate incitement, conducted for a bachelor’s degree project.',

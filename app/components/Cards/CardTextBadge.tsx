@@ -30,8 +30,10 @@ const CardTextBadge: FC<CardTextBadgeProps> = ({
               <hr />
               <div className='mb-5 flex flex-col gap-y-2'>
                 <div className='flex items-center gap-x-2'>
-                  <div className='card-title text-lg'>{element.title}</div>
-                  {element.link && <KdbExternalLink link={element.link} />}
+                  <span className='card-title inline-flex items-center text-lg'>
+                    {element.title}
+                    {element.link && <KdbExternalLink link={element.link} />}
+                  </span>
                 </div>
                 <div className='text-quaternary'>{element.description}</div>
                 <div className='card-actions justify-end'>

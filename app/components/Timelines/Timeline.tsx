@@ -12,6 +12,7 @@ const Timeline: FC<TimelineProps> = ({ elements }) => {
     <ul className='timeline max-md:timeline-vertical text-sm'>
       {elements.map((element, index) => (
         <li key={index}>
+          {index > 0 && <hr className='bg-tertiary' />}
           <div className='timeline-start'>{element.date}</div>
           <div className='timeline-middle'>
             <svg
@@ -30,7 +31,7 @@ const Timeline: FC<TimelineProps> = ({ elements }) => {
           <div className='timeline-end timeline-box bg-tertiary'>
             {element.description}
           </div>
-          <hr className='bg-tertiary' />
+          {index < elements.length - 1 && <hr className='bg-tertiary' />}
         </li>
       ))}
     </ul>
