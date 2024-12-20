@@ -5,7 +5,7 @@ import { SectionProps } from '@/app/pageSections/Section';
 import { FC, useEffect, useMemo, useState } from 'react';
 
 const Projects: FC<SectionProps> = ({ onNavigationChange }) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   const handlers = useMemo(
     () => ({
