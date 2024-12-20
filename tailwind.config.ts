@@ -18,10 +18,18 @@ const config: Config = {
         '3xs': '8px',
       },
       fontFamily: {
-        pixeled: ['var(--font-pixeled)'],
+        'funnel-sans': ['var(--font-funnel-sans)'],
+      },
+      colors: {
+        'primary': '#101010',
+        'secondary': '#181818',
+        'tertiary': '#262626',
+        'quaternary': '#B3B3B3',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 };
 export default config;

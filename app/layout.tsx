@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import { pixeled } from './styles/fonts';
+import { lexendDeca } from './styles/fonts';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://davisf.dev'),
@@ -45,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${pixeled.className} bg-black text-white`}>
+      <body className={`${lexendDeca.className} bg-primary text-white`}>
         {children}
       </body>
     </html>

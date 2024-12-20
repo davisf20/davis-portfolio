@@ -1,6 +1,7 @@
-import localFont from 'next/font/local';
+import { Lexend_Deca } from 'next/font/google';
 
-export const pixeled = localFont({
-  src: './files/Pixeled.ttf',
-  variable: '--font-pixeled',
+export const lexendDeca = Lexend_Deca({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-lexend-deca',
 });

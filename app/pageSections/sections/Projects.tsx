@@ -1,53 +1,71 @@
-import { useKeyboardNavigation } from '@/app/components/KeyboardNavigation/useKeyboardNavigation';
-import ProjectCard from '@/app/components/ProjectCard/ProjectCard';
-import { projects } from '@/app/components/ProjectCard/projectsConfig';
-import { SectionProps } from '@/app/pageSections/Section';
-import { FC, useEffect, useMemo, useState } from 'react';
+import CardTextBadge from '@/app/components/Cards/CardTextBadge';
+import TimelineHorizontal from '@/app/components/Timelines/TimelineHorizontal';
 
-const Projects: FC<SectionProps> = ({ onNavigationChange }) => {
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+const timelineElements = [
+  {
+    date: '2022',
+    description: 'Ticket System',
+  },
+  {
+    date: '2023',
+    description: 'Users',
+  },
+  {
+    date: '2024',
+    description: 'Portfolio',
+  },
+  {
+    date: 'Current',
+    description: 'Marketplace',
+  },
+];
 
-  const handlers = useMemo(
-    () => ({
-      onLeft: () => setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev)),
-      onRight: () =>
-        setSelectedIndex((prev) =>
-          prev < projects.length - 1 ? prev + 1 : prev
-        ),
-      onEnter: () => {
-        const project = projects[selectedIndex];
-        if (project) {
-          window.open(project.link, '_blank');
-        }
-      },
-    }),
-    [selectedIndex]
-  );
+const projects = [
+  {
+    title: 'Ticket System',
+    description:
+      'Developed a RESTful API for a web-based ticket tracking platform. Enables users to perform CRUD operations on tickets using JSON format.',
+    tags: ['Java', 'Spring Boot', 'JavaScript'],
+    link: 'https://github.com/davisf20/SUPSI-ticket-system',
+  },
+  {
+    title: 'Characterization of user misbehavior in online social media',
+    description:
+      'A study of Twitter misbehavior in discussions about the Covid-19 vaccine in Italy, focusing on misinformation and hate incitement, conducted for a bachelor’s degree project.',
+    tags: ['Python', 'Machine Learning', 'Data Science'],
+    link: 'https://github.com/davisf20/characterization-of-user-misbehavior-in-online-social-media',
+  },
+  {
+    title: 'This website',
+    description:
+      'This portfolio website as a showcase of my projects and skills.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
+    link: 'https://github.com/davisf20/davis-portfolio',
+  },
+  {
+    title: 'Marketplace',
+    description:
+      'A marketplace where users can buy and sell their items, specialized in sports.',
+    tags: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Next.js',
+      'Nest.js',
+      'PostgreSQL',
+      'Stripe',
+    ],
+    link: 'https://court-x.com',
+  },
+];
 
-  useEffect(() => {
-    onNavigationChange?.({
-      onLeft: handlers.onLeft,
-      onRight: handlers.onRight,
-      onEnter: handlers.onEnter,
-    });
-    return () => onNavigationChange?.(undefined);
-  }, [handlers, onNavigationChange]);
-
-  useKeyboardNavigation(handlers);
-
+const Projects = () => {
   return (
-    <section className='bg-black text-white'>
-      <div className='grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2'>
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            project={project}
-            isSelected={selectedIndex === index}
-            onHover={() => setSelectedIndex(index)}
-          />
-        ))}
-      </div>
-    </section>
+    <CardTextBadge
+      title='Projects'
+      description={<TimelineHorizontal elements={timelineElements} />}
+      elements={projects}
+    />
   );
 };
 
