@@ -1,5 +1,7 @@
 import ButtonGlass from '@/app/components/Buttons/ButtonGlass';
 import Card from '@/app/components/Cards/Card';
+import { FaLinkedin } from 'react-icons/fa';
+import { LuGithub, LuMail } from 'react-icons/lu';
 
 const Contacts = () => {
   return (
@@ -16,7 +18,11 @@ const Contacts = () => {
                 'noopener noreferrer'
               );
             }}
-            text='davis.fusco.20@gmail.com'
+            text={
+              <div className='flex items-center gap-x-2'>
+                <LuMail /> davis.fusco.20@gmail.com
+              </div>
+            }
             className='w-full'
           />
           <ButtonGlass
@@ -27,7 +33,11 @@ const Contacts = () => {
                 'noopener noreferrer'
               );
             }}
-            text='LinkedIn'
+            text={
+              <div className='flex items-center gap-x-2'>
+                <FaLinkedin /> LinkedIn
+              </div>
+            }
             className='w-full'
           />
           <ButtonGlass
@@ -38,7 +48,11 @@ const Contacts = () => {
                 'noopener noreferrer'
               );
             }}
-            text='GitHub'
+            text={
+              <div className='flex items-center gap-x-2'>
+                <LuGithub /> GitHub
+              </div>
+            }
             className='w-full'
           />
         </div>

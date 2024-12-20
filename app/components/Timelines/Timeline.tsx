@@ -27,8 +27,10 @@ const Timeline: FC<TimelineProps> = ({ elements }) => {
               />
             </svg>
           </div>
-          <div className='timeline-end timeline-box'>{element.description}</div>
-          <hr />
+          <div className='timeline-end timeline-box bg-tertiary'>
+            {element.description}
+          </div>
+          <hr className='bg-tertiary' />
         </li>
       ))}
     </ul>

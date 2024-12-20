@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import Progress from '../Progress/Progress';
 
 const badgeColors: Record<number, string> = {
@@ -9,12 +9,12 @@ const badgeColors: Record<number, string> = {
 };
 
 export type CardBadgesElement = {
-  title: string;
+  title: string | ReactNode;
   tags: string[];
 };
 
 export type ProgressElement = {
-  title: string;
+  title: string | ReactNode;
   bars: {
     text: string;
     value: number;
@@ -29,9 +29,9 @@ type CardBadgesProps = {
 
 const CardBadges: FC<CardBadgesProps> = ({ title, elements }) => {
   return (
-    <div className='card bg-base-100 border-quaternary max-w-[500px] border-2 shadow-xl'>
+    <div className='card border-tertiary bg-secondary max-w-[500px] border-2 shadow-xl'>
       <div className='card-body flex flex-col gap-y-5'>
-        <h2 className='card-title'>{title}</h2>
+        <div className='card-title'>{title}</div>
         {elements.map((element, elementIndex) =>
           'tags' in element ? (
             <div key={elementIndex} className='card-actions flex flex-col'>

@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 type ButtonGlassProps = {
   onClick: () => void;
-  text: string;
+  text: string | ReactNode;
   className?: string;
 };
 
