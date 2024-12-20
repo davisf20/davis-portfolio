@@ -1,5 +1,5 @@
 import CardTextBadge from '@/app/components/Cards/CardTextBadge';
-import TimelineHorizontal from '@/app/components/Timelines/TimelineHorizontal';
+import Timeline from '@/app/components/Timelines/Timeline';
 
 const timelineElements = [
   {
@@ -63,7 +63,7 @@ const Projects = () => {
   return (
     <CardTextBadge
       title='Projects'
-      description={<TimelineHorizontal elements={timelineElements} />}
+      description={<Timeline elements={timelineElements} />}
       elements={projects}
     />
   );

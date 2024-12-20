@@ -11,7 +11,7 @@ I specialize in creating and managing web applications, dealing with both fronte
 I am a precise and curious person, always ready to learn new skills.\n
 I enjoy working in a team and, even when faced with challenges, I am committed to finding effective solutions.
 My goal is to continue to grow professionally, contributing my work to the success of the projects in which I participate.`}
-      upperElement={<Avatar />}
+      upperElement={<Avatar src='/avatar.webp' />}
       tags={['Switzerland', 'Full-Stack Developer']}
     />
   );

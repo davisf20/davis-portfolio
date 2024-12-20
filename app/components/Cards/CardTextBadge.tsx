@@ -20,7 +20,7 @@ const CardTextBadge: FC<CardTextBadgeProps> = ({
   elements,
 }) => {
   return (
-    <div className='card bg-base-100 border-quaternary w-[500px] border-2 shadow-xl'>
+    <div className='card bg-base-100 border-quaternary max-w-[500px] border-2 shadow-xl'>
       <div className='card-body'>
         <h2 className='card-title'>{title}</h2>
         <div className='text-quaternary mb-5'>{description}</div>

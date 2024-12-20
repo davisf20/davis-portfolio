@@ -1,13 +1,15 @@
-type TimelineHorizontalProps = {
+import { FC } from 'react';
+
+type TimelineProps = {
   elements: {
     date: string;
     description: string;
   }[];
 };
 
-const TimelineHorizontal = ({ elements }: TimelineHorizontalProps) => {
+const Timeline: FC<TimelineProps> = ({ elements }) => {
   return (
-    <ul className='timeline text-sm'>
+    <ul className='timeline max-md:timeline-vertical text-sm'>
       {elements.map((element, index) => (
         <li key={index}>
           <div className='timeline-start'>{element.date}</div>
@@ -33,4 +35,4 @@ const TimelineHorizontal = ({ elements }: TimelineHorizontalProps) => {
   );
 };
 
-export default TimelineHorizontal;
+export default Timeline;
