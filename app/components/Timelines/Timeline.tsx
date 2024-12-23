@@ -1,15 +1,15 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 type TimelineProps = {
   elements: {
     date: string;
-    description: string;
+    description: string | ReactNode;
   }[];
 };
 
 const Timeline: FC<TimelineProps> = ({ elements }) => {
   return (
-    <ul className='timeline max-md:timeline-vertical text-sm'>
+    <ul className='timeline text-sm max-md:timeline-vertical'>
       {elements.map((element, index) => (
         <li key={index}>
           {index > 0 && <hr className='bg-tertiary' />}

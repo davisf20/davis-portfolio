@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from 'react';
 import KdbExternalLink from '../Kdbs/KdbExternalLink';
 
 type element = {
+  id?: string;
   title: string | ReactNode;
   description: string | ReactNode;
   tags: string[];
@@ -20,13 +21,13 @@ const CardTextBadge: FC<CardTextBadgeProps> = ({
   elements,
 }) => {
   return (
-    <div className='card border-tertiary bg-secondary max-w-[500px] border-2 shadow-xl'>
+    <div className='card max-w-[500px] border-2 border-tertiary bg-secondary shadow-xl'>
       <div className='card-body'>
         <h2 className='card-title'>{title}</h2>
-        <div className='text-quaternary mb-5'>{description}</div>
+        <div className='mb-5 text-quaternary'>{description}</div>
         {elements &&
           elements.map((element, index) => (
-            <div key={index} className='flex flex-col gap-y-5'>
+            <div key={index} id={element.id} className='flex flex-col gap-y-5'>
               <hr />
               <div className='mb-5 flex flex-col gap-y-2'>
                 <div className='flex items-center gap-x-2'>

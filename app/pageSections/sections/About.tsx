@@ -9,6 +9,7 @@ const About = () => {
       title='About Me'
       description={
         <div>
+          <h3 className='text-lg font-bold'>Who am I?</h3>
           <p>
             <MdWavingHand className='mr-1 inline-flex text-yellow-500' />
             Hi, I am Davis Fusco, a computer scientist based in
@@ -18,25 +19,30 @@ const About = () => {
             </span>
           </p>
           <p>
-            I currently work as a Full-Stack Developer, a role that allows me to
-            combine my passion for software development with the skills I
-            acquired during my education and work experiences.
-          </p>
-          <p>
-            I am specialized in creating and managing web applications, dealing
-            with both frontend and backend.
+            I graduated with a Bachelor of Science in Computer Engineering from
+            SUPSI, where I gained expertise in software development. Currently,
+            I work as a Full-Stack Developer, a role that allows me to bring my
+            passion for technology into professional practice.
           </p>
           <br />
+          <h3 className='text-lg font-bold'>What I do?</h3>
           <p>
-            I am a precise and curious person, always ready to learn new skills.
+            I am specialized in designing, developing, and managing web
+            applications, handling both frontend and backend aspects. My
+            technical skills span a range of modern technologies, including
+            JavaScript frameworks, Java & Spring Boot, and tools like Docker and
+            Git. I have a strong foundation in software engineering and data
+            analysis, which I leverage to create efficient and robust solutions.
           </p>
+          <br />
+          <h3 className='text-lg font-bold'>Why choose me?</h3>
           <p>
-            I enjoy working in a team, and even when faced with challenges, I am
-            committed to finding effective solutions.
-          </p>
-          <p>
-            My goal is to continue to grow professionally, contributing my work
-            to the success of the projects in which I participate.
+            I am a precise and curious person, always eager to learn and explore
+            new skills. My strong problem-solving attitude and adaptability
+            allow me to navigate challenges effectively, whether working
+            independently or in a team. I believe in continuous growth and
+            strive to contribute to the success of every project I am involved
+            in by applying my knowledge and delivering impactful results.
           </p>
         </div>
       }

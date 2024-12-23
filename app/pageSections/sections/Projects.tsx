@@ -6,24 +6,25 @@ import { LuGlobe, LuShoppingCart, LuStore, LuTicket } from 'react-icons/lu';
 const timelineElements = [
   {
     date: '2022',
-    description: 'Ticket System',
+    description: <a href='#ticket-system'>Ticket System</a>,
   },
   {
     date: '2023',
-    description: 'Users',
+    description: <a href='#misbehavior-study'>Users</a>,
   },
   {
     date: '2024',
-    description: 'Portfolio',
+    description: <a href='#portfolio'>Portfolio</a>,
   },
   {
     date: 'Current',
-    description: 'Marketplace',
+    description: <a href='#marketplace'>Marketplace</a>,
   },
 ];
 
 const projects = [
   {
+    id: 'ticket-system',
     title: (
       <div className='flex items-center gap-x-2'>
         <LuTicket /> Ticket System
@@ -35,6 +36,7 @@ const projects = [
     link: 'https://github.com/davisf20/SUPSI-ticket-system',
   },
   {
+    id: 'misbehavior-study',
     title: (
       <span>
         <FaUsers className='mr-2 inline-flex' />
@@ -47,6 +49,7 @@ const projects = [
     link: 'https://github.com/davisf20/characterization-of-user-misbehavior-in-online-social-media',
   },
   {
+    id: 'portfolio',
     title: (
       <div className='flex items-center gap-x-2'>
         <LuGlobe /> This website
@@ -58,6 +61,7 @@ const projects = [
     link: 'https://github.com/davisf20/davis-portfolio',
   },
   {
+    id: 'marketplace',
     title: (
       <div className='flex items-center gap-x-2'>
         <LuShoppingCart /> Marketplace
