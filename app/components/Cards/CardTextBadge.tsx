@@ -13,15 +13,19 @@ type CardTextBadgeProps = {
   title: string;
   description: string | ReactNode;
   elements?: element[];
+  className?: string;
 };
 
 const CardTextBadge: FC<CardTextBadgeProps> = ({
   title,
   description,
   elements,
+  className,
 }) => {
   return (
-    <div className='card max-w-[500px] border-2 border-tertiary bg-secondary shadow-xl'>
+    <div
+      className={`card max-w-[500px] border-2 border-tertiary bg-secondary shadow-xl ${className}`}
+    >
       <div className='card-body'>
         <h2 className='card-title'>{title}</h2>
         <div className='mb-5 text-quaternary'>{description}</div>

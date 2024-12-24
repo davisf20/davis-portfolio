@@ -1,5 +1,6 @@
 import CardTextBadge from '@/app/components/Cards/CardTextBadge';
 import Timeline from '@/app/components/Timelines/Timeline';
+import { FC } from 'react';
 import { FaUsers } from 'react-icons/fa';
 import { LuGlobe, LuShoppingCart, LuStore, LuTicket } from 'react-icons/lu';
 
@@ -27,7 +28,7 @@ const projects = [
     id: 'ticket-system',
     title: (
       <div className='flex items-center gap-x-2'>
-        <LuTicket /> Ticket System
+        <LuTicket className='text-orange-500' /> Ticket System
       </div>
     ),
     description:
@@ -39,7 +40,7 @@ const projects = [
     id: 'misbehavior-study',
     title: (
       <span>
-        <FaUsers className='mr-2 inline-flex' />
+        <FaUsers className='mr-2 inline-flex text-emerald-500' />
         Characterization of user misbehavior in online social media
       </span>
     ),
@@ -52,7 +53,7 @@ const projects = [
     id: 'portfolio',
     title: (
       <div className='flex items-center gap-x-2'>
-        <LuGlobe /> This website
+        <LuGlobe className='text-blue-500' /> This website
       </div>
     ),
     description:
@@ -64,7 +65,7 @@ const projects = [
     id: 'marketplace',
     title: (
       <div className='flex items-center gap-x-2'>
-        <LuShoppingCart /> Marketplace
+        <LuShoppingCart className='text-lime-500' /> Marketplace
       </div>
     ),
     description:
@@ -82,12 +83,17 @@ const projects = [
   },
 ];
 
-const Projects = () => {
+type ProjectsProps = {
+  className?: string;
+};
+
+const Projects: FC<ProjectsProps> = ({ className }) => {
   return (
     <CardTextBadge
       title='Projects'
       description={<Timeline elements={timelineElements} />}
       elements={projects}
+      className={className}
     />
   );
 };

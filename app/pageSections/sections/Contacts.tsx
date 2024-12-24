@@ -1,12 +1,18 @@
 import ButtonGlass from '@/app/components/Buttons/ButtonGlass';
 import Card from '@/app/components/Cards/Card';
+import { FC } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { LuGithub, LuMail } from 'react-icons/lu';
 
-const Contacts = () => {
+type ContactsProps = {
+  className?: string;
+};
+
+const Contacts: FC<ContactsProps> = ({ className }) => {
   return (
     <Card
       title='Contacts'
+      className={className}
       description='Here is how you can reach me:'
       lowerElement={
         <div className='flex w-full flex-col items-center gap-y-2'>

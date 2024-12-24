@@ -25,11 +25,14 @@ export type ProgressElement = {
 type CardBadgesProps = {
   title: string;
   elements: (CardBadgesElement | ProgressElement)[];
+  className?: string;
 };
 
-const CardBadges: FC<CardBadgesProps> = ({ title, elements }) => {
+const CardBadges: FC<CardBadgesProps> = ({ title, elements, className }) => {
   return (
-    <div className='card border-tertiary bg-secondary max-w-[500px] border-2 shadow-xl'>
+    <div
+      className={`card max-w-[500px] border-2 border-tertiary bg-secondary shadow-xl ${className}`}
+    >
       <div className='card-body flex flex-col gap-y-5'>
         <div className='card-title'>{title}</div>
         {elements.map((element, elementIndex) =>

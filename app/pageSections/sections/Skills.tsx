@@ -2,6 +2,7 @@ import CardBadges, {
   CardBadgesElement,
 } from '@/app/components/Cards/CardBadges';
 import { ProgressElement } from '@/app/components/Cards/CardBadges';
+import { FC } from 'react';
 import { LuBrain, LuCodeXml, LuLanguages } from 'react-icons/lu';
 
 const skills: (CardBadgesElement | ProgressElement)[] = [
@@ -48,8 +49,12 @@ const skills: (CardBadgesElement | ProgressElement)[] = [
   },
 ];
 
-const Skills = () => {
-  return <CardBadges title='Skills' elements={skills} />;
+type SkillsProps = {
+  className?: string;
+};
+
+const Skills: FC<SkillsProps> = ({ className }) => {
+  return <CardBadges title='Skills' elements={skills} className={className} />;
 };
 
 export default Skills;

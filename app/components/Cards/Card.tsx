@@ -6,6 +6,7 @@ type CardProps = {
   upperElement?: ReactNode;
   lowerElement?: ReactNode;
   tags?: string[];
+  className?: string;
 };
 
 const Card: FC<CardProps> = ({
@@ -14,10 +15,13 @@ const Card: FC<CardProps> = ({
   upperElement,
   lowerElement,
   tags,
+  className,
 }) => {
   return (
-    <div className='card border-tertiary bg-secondary w-full max-w-[500px] border-2 shadow-xl'>
-      <div className='card-body'>
+    <div
+      className={`card w-full max-w-[500px] border-2 border-tertiary bg-secondary shadow-xl ${className}`}
+    >
+      <div className='card-body flex flex-col gap-y-5'>
         <div className='flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-2'>
           <h2 className='card-title'>{title}</h2>
           {tags &&
@@ -28,7 +32,7 @@ const Card: FC<CardProps> = ({
             ))}
         </div>
         {upperElement}
-        <div className='text-quaternary whitespace-pre-line'>{description}</div>
+        <div className='whitespace-pre-line text-quaternary'>{description}</div>
         {lowerElement}
       </div>
     </div>

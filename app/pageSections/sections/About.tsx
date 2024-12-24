@@ -1,12 +1,18 @@
 import Avatar from '@/app/components/Avatar/Avatar';
 import Card from '@/app/components/Cards/Card';
+import { FC } from 'react';
 import { CiLocationOn } from 'react-icons/ci';
 import { MdWavingHand } from 'react-icons/md';
 
-const About = () => {
+type AboutProps = {
+  className?: string;
+};
+
+const About: FC<AboutProps> = ({ className }) => {
   return (
     <Card
       title='About Me'
+      className={className}
       description={
         <div>
           <h3 className='text-lg font-bold'>Who am I?</h3>
