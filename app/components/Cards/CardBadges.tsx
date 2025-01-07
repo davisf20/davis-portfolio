@@ -16,7 +16,7 @@ export type CardBadgesElement = {
 export type ProgressElement = {
   title: string | ReactNode;
   bars: {
-    text: string;
+    text: string | ReactNode;
     value: number;
     max?: number;
   }[];

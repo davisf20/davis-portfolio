@@ -43,8 +43,24 @@ const skills: (CardBadgesElement | ProgressElement)[] = [
       </div>
     ),
     bars: [
-      { text: 'Italian', value: 100 },
-      { text: 'English', value: 70 },
+      {
+        text: (
+          <>
+            <span className='font-bold'>Italian</span>
+            <span className='text-sm text-quaternary'> (Native)</span>
+          </>
+        ),
+        value: 100,
+      },
+      {
+        text: (
+          <>
+            <span className='font-bold'>English</span>
+            <span className='text-sm text-quaternary'> (Professional)</span>
+          </>
+        ),
+        value: 80,
+      },
     ],
   },
 ];
