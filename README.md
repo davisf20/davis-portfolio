@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio - Davis Fusco
 
-## Getting Started
+![Portfolio Preview](public/portfolio/preview.png)
 
-First, run the development server:
+A portfolio made with Next.js, TypeScript and Tailwind CSS to show my projects and skills as a Full-Stack Developer.
+
+## 🚀 Demo
+
+Visit the portfolio: [davisf.dev](https://davisf.dev)
+
+## ⚙️ Technologies Used
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Style**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [DaisyUI](https://daisyui.com/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Formatting**: [Prettier](https://prettier.io/)
+
+## 🛠️ Installation
+
+1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/davisfdev/davisf.dev.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install the dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Run the development server
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Apri [http://localhost:3000](http://localhost:3000) nel tuo browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+├── app/
+│   ├── components/ # UI components
+│   ├── pageSections/ # Page sections
+│   ├── styles/ # Global styles
+│   └── layout.tsx # Principal layout of the app
+├── public/ # Public assets
+└── ...config files
+```
 
-## Deploy on Vercel
+## 🎨 Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Responsive and modern design
+- Optimized dark theme
+- Reusable components
+- Sections for:
+  - About me
+  - Projects
+  - Skills
+  - Contact
+- Integration with social media
+- SEO optimization
+- Optimized performance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📫 Contacts
+
+- LinkedIn: [Davis Fusco](https://www.linkedin.com/in/davis-fusco/)
+- Email: davis.fusco.20@gmail.com
+- GitHub: [@davisf20](https://github.com/davisf20)
+
+---
+
+Developed by Davis Fusco
