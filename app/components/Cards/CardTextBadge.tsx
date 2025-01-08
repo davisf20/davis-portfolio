@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import KdbExternalLink from '../Kdbs/KdbExternalLink';
+import Carousel from '../Carousel/Carousel';
 
 type element = {
   id?: string;
@@ -7,6 +8,7 @@ type element = {
   description: string | ReactNode;
   tags: string[];
   link?: string;
+  images?: string[];
 };
 
 type CardTextBadgeProps = {
@@ -40,6 +42,7 @@ const CardTextBadge: FC<CardTextBadgeProps> = ({
                     {element.link && <KdbExternalLink link={element.link} />}
                   </span>
                 </div>
+                {element.images && <Carousel images={element.images} />}
                 <div className='text-quaternary'>{element.description}</div>
                 <div className='card-actions justify-end'>
                   {element.tags.map((tag) => (

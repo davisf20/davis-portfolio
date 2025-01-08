@@ -60,6 +60,10 @@ const projects = [
       'This portfolio website as a showcase of my projects and skills.',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
     link: 'https://github.com/davisf20/davis-portfolio',
+    images: [
+      '/images/projects/portfolio/preview.png',
+      '/images/projects/portfolio/preview2.png',
+    ],
   },
   {
     id: 'marketplace',
