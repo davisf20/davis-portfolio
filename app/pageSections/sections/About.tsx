@@ -18,7 +18,7 @@ const About: FC<AboutProps> = ({ className }) => {
           <h3 className='text-lg font-bold'>Who am I?</h3>
           <p>
             <MdWavingHand className='mr-1 inline-flex text-yellow-500' />
-            Hi, I am Davis Fusco, a computer scientist based in
+            Hi, I am Davis Fusco, a computer scientist based in{' '}
             <span className='inline-flex items-center'>
               Switzerland.
               <CiLocationOn className='ml-1 text-blue-500' />
