@@ -4,7 +4,7 @@ import About from './sections/About';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import Contacts from './sections/Contacts';
-import useIsMobile from '../hooks/useIsMobile';
+import useIsMobile from '../features/hooks/useIsMobile';
 
 const Home = () => {
   const isMobile = useIsMobile();

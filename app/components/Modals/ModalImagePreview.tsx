@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Image from 'next/image';
-import useIsMobile from '@/app/hooks/useIsMobile';
+import useIsMobile from '@/app/features/hooks/useIsMobile';
 
 type ModalImagePreviewProps = {
   images: string[];
