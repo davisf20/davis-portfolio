@@ -8,7 +8,10 @@ type ButtonGlassProps = {
 
 const ButtonGlass: FC<ButtonGlassProps> = ({ onClick, text, className }) => {
   return (
-    <button className={`btn glass ${className}`} onClick={onClick}>
+    <button
+      className={`btn glass hover:bg-primary ${className}`}
+      onClick={onClick}
+    >
       {text}
     </button>
   );

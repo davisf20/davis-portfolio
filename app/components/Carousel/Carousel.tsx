@@ -49,13 +49,19 @@ const Carousel: FC<CarouselProps> = ({ images }) => {
             />
             <div className='absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform'>
               {index > 0 && (
-                <a href={`#slide${index - 1}`} className='btn btn-circle'>
+                <a
+                  href={`#slide${index - 1}`}
+                  className='btn btn-circle bg-tertiary hover:bg-secondary'
+                >
                   <IoIosArrowBack size={20} />
                 </a>
               )}
               <div className='flex-1' onClick={() => handleImageClick(index)} />
               {index < images.length - 1 && (
-                <a href={`#slide${index + 1}`} className='btn btn-circle'>
+                <a
+                  href={`#slide${index + 1}`}
+                  className='btn btn-circle bg-tertiary hover:bg-secondary'
+                >
                   <IoIosArrowForward size={20} />
                 </a>
               )}

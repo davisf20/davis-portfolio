@@ -51,10 +51,10 @@ const ModalImagePreview: FC<ModalImagePreviewProps> = ({
             }`}
             priority
           />
-          <div className='absolute left-2 right-2 top-1/2 flex -translate-y-1/2 transform'>
+          <div className='absolute left-7 right-7 top-1/2 flex -translate-y-1/2 transform'>
             {selectedImage > 0 && (
               <button
-                className='btn btn-circle btn-sm md:btn-md'
+                className='btn btn-circle btn-sm bg-tertiary md:btn-md hover:bg-secondary'
                 onClick={onPrev}
                 disabled={selectedImage === 0}
               >
@@ -64,7 +64,7 @@ const ModalImagePreview: FC<ModalImagePreviewProps> = ({
             <div className='flex-1' />
             {selectedImage < images.length - 1 && (
               <button
-                className='btn btn-circle btn-sm md:btn-md'
+                className='btn btn-circle btn-sm bg-tertiary md:btn-md hover:bg-secondary'
                 onClick={onNext}
                 disabled={selectedImage === images.length - 1}
               >
