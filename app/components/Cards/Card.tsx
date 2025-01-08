@@ -19,7 +19,7 @@ const Card: FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`card w-full max-w-[500px] border-2 border-tertiary bg-secondary shadow-xl ${className}`}
+      className={`card w-full max-w-[500px] border-2 border-tertiary bg-secondary shadow-xl md:max-w-[1020px] ${className}`}
     >
       <div className='card-body flex flex-col gap-y-5'>
         <div className='flex flex-col gap-y-2 md:flex-row md:items-center md:gap-x-2'>
