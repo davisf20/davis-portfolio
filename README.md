@@ -1,7 +1,5 @@
 # Personal Portfolio - Davis Fusco
 
-![Portfolio Preview](public/portfolio/preview.png)
-
 A portfolio made with Next.js, TypeScript and Tailwind CSS to show my projects and skills as a Full-Stack Developer.
 
 ## 🚀 Demo
