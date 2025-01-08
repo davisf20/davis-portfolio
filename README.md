@@ -44,6 +44,8 @@ pnpm dev
 ```
 ├── app/
 │   ├── components/ # UI components
+│   ├── features/ # Feature-based modules
+│   │   └── animations/ # Animation-related features
 │   ├── pageSections/ # Page sections
 │   ├── styles/ # Global styles
 │   └── layout.tsx # Principal layout of the app

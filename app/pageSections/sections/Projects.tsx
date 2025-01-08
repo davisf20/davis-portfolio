@@ -2,24 +2,28 @@ import CardTextBadge from '@/app/components/Cards/CardTextBadge';
 import Timeline from '@/app/components/Timelines/Timeline';
 import { FC } from 'react';
 import { FaUsers } from 'react-icons/fa';
-import { LuGlobe, LuShoppingCart, LuStore, LuTicket } from 'react-icons/lu';
+import { LuGlobe, LuShoppingCart, LuTicket } from 'react-icons/lu';
 
 const timelineElements = [
   {
     date: '2022',
-    description: <a href='#ticket-system'>Ticket System</a>,
+    description: 'Ticket System',
+    targetId: 'ticket-system',
   },
   {
     date: '2023',
-    description: <a href='#misbehavior-study'>Users</a>,
+    description: 'Users',
+    targetId: 'misbehavior-study',
   },
   {
     date: '2024',
-    description: <a href='#portfolio'>Portfolio</a>,
+    description: 'Portfolio',
+    targetId: 'portfolio',
   },
   {
     date: 'Current',
-    description: <a href='#marketplace'>Marketplace</a>,
+    description: 'Marketplace',
+    targetId: 'marketplace',
   },
 ];
 

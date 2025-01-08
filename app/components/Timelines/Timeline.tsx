@@ -1,13 +1,21 @@
+import { scrollToElement } from '@/app/features/animations/scroll';
 import { FC, ReactNode } from 'react';
 
 type TimelineProps = {
   elements: {
     date: string;
     description: string | ReactNode;
+    targetId?: string;
   }[];
 };
 
 const Timeline: FC<TimelineProps> = ({ elements }) => {
+  const handleClick = (targetId?: string) => {
+    if (targetId) {
+      scrollToElement(targetId);
+    }
+  };
+
   return (
     <ul className='timeline text-sm max-md:timeline-vertical'>
       {elements.map((element, index) => (
@@ -28,7 +36,10 @@ const Timeline: FC<TimelineProps> = ({ elements }) => {
               />
             </svg>
           </div>
-          <div className='timeline-end timeline-box bg-tertiary'>
+          <div
+            className='timeline-end timeline-box bg-tertiary'
+            onClick={() => handleClick(element.targetId)}
+          >
             {element.description}
           </div>
           {index < elements.length - 1 && <hr className='bg-tertiary' />}
