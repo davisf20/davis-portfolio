@@ -20,8 +20,8 @@ const skills: (CardBadgesElement | ProgressElement)[] = [
       'Git',
       'Docker',
       'TDD (Maven, Jest)',
-      'React & NextJS',
       'NodeJS, NestJS & NextJS',
+      'React',
       'Web Development',
       'Data Analysis',
       'Machine Learning',
@@ -34,7 +34,13 @@ const skills: (CardBadgesElement | ProgressElement)[] = [
         <LuBrain /> Soft Skills
       </div>
     ),
-    tags: ['Communication', 'Teamwork', 'Problem Solving', 'Adaptability'],
+    tags: [
+      'Communication',
+      'Teamwork',
+      'Problem Solving',
+      'Adaptability',
+      'Critical thinking',
+    ],
   },
   {
     title: (
